@@ -2,40 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-
-#define MAXKEYS 3
-#define MINKEYS 2
-#define NIL (-1)
-#define PAGESIZE sizeof(BTPAGE)
-
-
-typedef struct {
-    char ID_aluno[4];
-    char sigla_disc[4];
-    char nome_aluno[50];
-    char nome_disc[50];
-    float media;
-    float frequencia;
-} REGISTRO;
-
-typedef struct {
-    char ID_aluno[4];
-    char sigla_disc[4];
-} CHAVE_PRIMARIA;
-
-typedef struct {
-    CHAVE_PRIMARIA id;
-    int rrn;
-} CHAVE_PAGINA;
-
-typedef struct {
-    int quantidadeNos;
-    CHAVE_PAGINA chaves[MAXKEYS];
-    int filhos[MAXKEYS+1];
-} BTPAGE;
+#include "header.h"
 
 FILE* indice;
 FILE* resultado;
+
 
 int criarArvore() {
     char chave;
