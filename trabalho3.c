@@ -456,7 +456,7 @@ int main()
             break;
 
         case 3:
-            printf("\nListando todos os clientes...\n\n");
+            printf("\nListando todos os alunos...\n\n");
             indice = verificaArquivo("indice.bin");
             resultado = verificaArquivo("resultado.bin");
             imprimeArvoreEmOrdem(recuperarRrnRaiz());
